@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/YaraSoliman1/Weather-App/static/css/main.7f55c899.css",
+    "main.js": "/YaraSoliman1/Weather-App/static/js/main.d0b11e0b.js",
+    "index.html": "/YaraSoliman1/Weather-App/index.html",
+    "main.7f55c899.css.map": "/YaraSoliman1/Weather-App/static/css/main.7f55c899.css.map",
+    "main.d0b11e0b.js.map": "/YaraSoliman1/Weather-App/static/js/main.d0b11e0b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7f55c899.css",
+    "static/js/main.d0b11e0b.js"
+  ]
+}
