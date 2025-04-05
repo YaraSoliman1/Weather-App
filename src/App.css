@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Arial", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* App Container */
+.app {
+  width: 90vw;
+  height: 90vh; /* 90% of the viewport height */
+  max-width: 90%;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  margin-left: 48px;
+  overflow: auto;
 }
 
-@keyframes App-logo-spin {
+/* Fade-in animation */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(-10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+  width: 800px;
+  font-size: 32px;
+  padding: 18px;
+  border: 2px solid #4facfe;
+  border-radius: 20px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.search-bar::placeholder{
+  padding-left: 24px;
+
+}
+/* Glow effect when focused */
+.search-bar:focus {
+  border-color: #00c3ff;
+  box-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+/* Search Button */
+button {
+  background: #4facfe;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 36px;
+}
+
+/* Button hover effect */
+button:hover {
+  background: #00c3ff;
+  transform: scale(1.05);
+}
+
+/* Weather Box */
+.weather-box {
+  margin-top: 10px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Weather List */
+.weather {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Weather Card */
+.day {
+  background: #f1f1f1;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Delayed animation for each weather card */
+.day:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.day:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.day:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.day:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.day:nth-child(5) {
+  animation-delay: 1s;
+}
+.day:nth-child(6) {
+  animation-delay: 1.2s;
+}
+.day:nth-child(7) {
+  animation-delay: 1.4s;
+}
+
+/* Slide-in animation for weather cards */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation */
+.loading {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  animation: bounce 1s infinite;
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Error Message */
+.error {
+  color: #d9534f;
+  font-size: 16px;
+  background: #f8d7da;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+}
+
